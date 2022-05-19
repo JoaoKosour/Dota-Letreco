@@ -1,6 +1,11 @@
 import ReactDOM from "react-dom/client";
-import App from "./App";
-
+import Home from "./Components/Home/Home";
+import Footer from "./Components/Footer/Footer.js";
+import Header from "./Components/Header/Header.js";
+import Login from "./Components/Login/Login";
+import Dotreko from "./Components/Dotreko/Dotreko";
+import Letrekomon from "./Components/Letrekomon/Letrekomon";
+import './index.css'
 import {
   BrowserRouter,
   Routes,
@@ -10,8 +15,14 @@ import {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <Route path="/" element={<App />} />
-    <Route path="expenses" element={<Expenses />} />
-    <Route path="invoices" element={<Invoices />} />
+    <Header />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="Dotreko" element={<Dotreko />} />
+      <Route path="Letrekomon" element={<Letrekomon />} />
+      <Route path="Login" element={<Login />} />
+    </Routes>
+    <Footer />
+    
   </BrowserRouter>
 );
